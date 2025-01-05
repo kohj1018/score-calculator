@@ -71,8 +71,10 @@ export function Calculator({ order, univ, univRatio, fullMarksNotice = "각각 1
           <ScoreInput label={"면접 점수(가정)"} univRatio={univRatio} value={interviewScore} setValue={setInterviewScore} />
         </div>
         <div className='flex items-center'>
-          <KeyboardDoubleArrowRight className='w-20' />
-          <div className='flex-col gap-y-3'>
+          <div className='px-10'>
+            <KeyboardDoubleArrowRight />
+          </div>
+          <div className='pl-5 flex-col gap-y-3'>
             <p className='text-lg'>환산 점수 <span className='text-sm'>({fullMarksNotice})</span></p>
             <li className='text-base'>1차 : {firstConversionScore}</li>
             <li className='text-base'>2차 : {secondConversionScore}</li>
