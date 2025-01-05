@@ -14,7 +14,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  GoogleAnalytics;
   return (
     <>
       <Head>
