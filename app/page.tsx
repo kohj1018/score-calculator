@@ -1,6 +1,5 @@
 import {Calculator} from "@/app/components/Calculator";
 import {건국대, 경희대, 동국대, 서강대, 서울시립대자연계열1, 서울시립대자연계열2, 성균관대, 중앙대, 한양대, 홍익대} from "@/utils/constants/univRatio";
-import Head from "next/head";
 
 export default function Home() {
   return (
@@ -8,14 +7,14 @@ export default function Home() {
       <title>편입 점수 계산기</title>
       <div className='px-10 pt-5 pb-20'>
         <header>
-          <h1 className='inline text-2xl font-bold pr-5'>
+          <h1 className='inline text-3xl font-bold pr-5'>
             2025 편입 점수 계산기
           </h1>
           <p className='inline-block text-base'>
            (by 올컴러)
           </p>
         </header>
-        <main className='mt-5 space-y-10'>
+        <main className='mt-12 space-y-10'>
           <Calculator order={1} univ={"한양대"} univRatio={한양대} />
           <Calculator order={2} univ={"성균관대"} univRatio={성균관대} fullMarksNotice={"각각 80, 100점 만점"} />
           <Calculator order={3} univ={"서강대"} univRatio={서강대} fullMarksNotice={"각각 90, 100점 만점"} />
@@ -27,6 +26,11 @@ export default function Home() {
           <Calculator order={9} univ={"동국대"} univRatio={동국대} />
           <Calculator order={10} univ={"홍익대"} univRatio={홍익대} />
         </main>
+        <footer className='mt-20 text-base text-slate-400'>
+          각 학교 모집요강 기반 추정치입니다.
+          참고용으로만 확인 바랍니다.
+          추가 원하는 사항은 문의주시면 반영해보도록 하겠습니다.
+        </footer>
       </div>
     </>
   );

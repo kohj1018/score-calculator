@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9af154a2-5547-4d90-a342-2cdecf77cd9b" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Calculator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Calculator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +50,8 @@
       <workItem from="1736089038278" duration="1144000" />
       <workItem from="1736090490809" duration="20220000" />
       <workItem from="1736110969551" duration="6356000" />
-      <workItem from="1736117676944" duration="211000" />
+      <workItem from="1736117676944" duration="276000" />
+      <workItem from="1736119794659" duration="288000" />
     </task>
     <servers />
   </component>
