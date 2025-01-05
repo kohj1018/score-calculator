@@ -14,8 +14,22 @@
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  html, body {
+    @apply p-0 m-0;
+  }
+
+  a {
+    @apply no-underline
+  }
+
+  * {
+    @apply box-border
+  }
+}
+
+@layer components {
+  .paddingHeader {
+    @apply pt-14 lg:pt-14
+  }
 }
