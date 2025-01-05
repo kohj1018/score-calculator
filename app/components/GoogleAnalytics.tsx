@@ -55,7 +55,6 @@ const GoogleAnalytics = () => {
     <>
       <Head>
         {/* 👇 gtag function definition. notice that we don't send page views at this point.  */}
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}></script>
         <script
           id='gtag-init'
           dangerouslySetInnerHTML={{
@@ -63,8 +62,6 @@ const GoogleAnalytics = () => {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-    
-              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
             `
           }}
         />
