@@ -3,14 +3,6 @@ import {건국대, 경희대, 동국대, 서강대, 서울시립대자연계열1
 import Head from "next/head";
 
 export default function Home() {
-  <Head>
-    <script
-      async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3397931650520195"
-      crossOrigin="anonymous"
-    >
-    </script>
-  </Head>
-
   return (
     <>
       <title>편입 점수 계산기</title>
