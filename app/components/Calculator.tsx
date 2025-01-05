@@ -64,14 +64,14 @@ export function Calculator({ order, univ, univRatio, fullMarksNotice = "각각 1
         {`${order}. ${univ}`}
       </p>
       <div className='w-full flex flex-wrap items-center pt-5 gap-y-5'>
-        <div className='flex flex-wrap items-center gap-x-2 w-[40vw] gap-y-3'>
+        <div className='flex flex-wrap items-center gap-x-2 w-[70vw] md:w-[40vw] gap-y-3'>
           <ScoreInput label={"영어 틀린 개수"} univRatio={univRatio} value={englishWrongAnswerNum} setValue={setEnglishWrongAnswerNum} />
           <ScoreInput label={"수학 틀린 개수"} univRatio={univRatio} value={mathWrongAnswerNum} setValue={setMathWrongAnswerNum} />
           <ScoreInput label={"서류 점수(가정)"} univRatio={univRatio} value={docScore} setValue={setDocScore} />
           <ScoreInput label={"면접 점수(가정)"} univRatio={univRatio} value={interviewScore} setValue={setInterviewScore} />
         </div>
         <div className='flex items-center'>
-          <div className='px-10'>
+          <div className='px-5 md:px-10'>
             <KeyboardDoubleArrowRight />
           </div>
           <div className='pl-5 flex-col gap-y-3'>
