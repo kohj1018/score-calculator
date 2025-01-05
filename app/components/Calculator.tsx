@@ -21,11 +21,16 @@ export function Calculator({ order, univ, univRatio, fullMarksNotice = "각각 1
   const [secondConversionScore, setSecondConversionScore] = useState<string>('0')
 
   useEffect(() => {
-    if (!!englishWrongAnswerNum && !!mathWrongAnswerNum && !!docScore && (univRatio.interviewRatio == 0 || (univRatio.interviewRatio > 0 && !!interviewScore))) {
-      let firstEngConScore: number = (univRatio.englishQuestionNum - parseInt(englishWrongAnswerNum)) / univRatio.englishQuestionNum * univRatio.firstEnglishRatio // 영어 환산 점수
+    if (!!mathWrongAnswerNum
+      && (univRatio.firstEnglishRatio == 0 || !!englishWrongAnswerNum)
+      && (univRatio.secondDocRatio == 0 || (univRatio.secondDocRatio > 0 && !!docScore))
+      && (univRatio.interviewRatio == 0 || (univRatio.interviewRatio > 0 && !!interviewScore))
+    ) {
+      let firstEngConScore: number = (univRatio.firstEnglishRatio == 0 ? 0 : (univRatio.englishQuestionNum - parseInt(englishWrongAnswerNum)) / univRatio.englishQuestionNum * univRatio.firstEnglishRatio) // 영어 환산 점수
       let firstMathConScore: number = (univRatio.mathQuestionNum - parseInt(mathWrongAnswerNum)) / univRatio.mathQuestionNum * univRatio.firstMathRatio // 수학 환산 점수
       let firstDocScore: number = univRatio.firstDocRatio
 
+      console.log("firstEng", firstEngConScore)
       if (univ == "성균관대") {
         firstEngConScore = firstEngConScore * 80 / 100
         firstMathConScore = firstMathConScore * 80 / 100
@@ -41,10 +46,12 @@ export function Calculator({ order, univ, univRatio, fullMarksNotice = "각각 1
         + firstMathConScore
         + firstDocScore
       ).toFixed(2));
+
+      const secondEngConScore: number = (univRatio.secondEnglishRatio == 0 ? 0 : (univRatio.englishQuestionNum - parseInt(englishWrongAnswerNum)) / univRatio.englishQuestionNum * univRatio.secondEnglishRatio) // 영어 환산 점수
       setSecondConversionScore((
-        (univRatio.englishQuestionNum - parseInt(englishWrongAnswerNum)) / univRatio.englishQuestionNum * univRatio.secondEnglishRatio // 영어 환산 점수
+        secondEngConScore
         + (univRatio.mathQuestionNum - parseInt(mathWrongAnswerNum)) / univRatio.mathQuestionNum * univRatio.secondMathRatio // 수학 환산 점수
-        + parseInt(docScore)
+        + parseInt(0 + docScore)
         + parseInt(0 + interviewScore)
       ).toFixed(2))
     }

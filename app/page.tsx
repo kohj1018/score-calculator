@@ -19,7 +19,7 @@ export default function Home() {
           <Calculator order={2} univ={"성균관대"} univRatio={성균관대} fullMarksNotice={"각각 80, 100점 만점"} />
           <Calculator order={3} univ={"서강대"} univRatio={서강대} fullMarksNotice={"각각 90, 100점 만점"} />
           <Calculator order={4} univ={"중앙대"} univRatio={중앙대} />
-          <Calculator order={5} univ={"경희대"} univRatio={경희대} />
+          <Calculator order={5} univ={"경희대"} univRatio={경희대} fullMarksNotice={"90점 만점"} />
           <Calculator order={6} univ={"서울시립대자연계열1"} univRatio={서울시립대자연계열1} />
           <Calculator order={7} univ={"서울시립대자연계열2"} univRatio={서울시립대자연계열2} />
           <Calculator order={8} univ={"건국대"} univRatio={건국대} />
