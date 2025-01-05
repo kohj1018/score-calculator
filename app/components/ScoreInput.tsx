@@ -9,6 +9,8 @@ interface Props {
   setValue: Dispatch<SetStateAction<string>>
 }
 export function ScoreInput({ label, univRatio, value, setValue }: Props) {
+  if (label == "영어 틀린 개수" && univRatio.englishQuestionNum == 0) return <></>
+
   if (label == "영어 틀린 개수" || label == "수학 틀린 개수") {
     const maxNum = (label == "영어 틀린 개수" ? univRatio.englishQuestionNum : univRatio.mathQuestionNum)
     return (
@@ -31,6 +33,7 @@ export function ScoreInput({ label, univRatio, value, setValue }: Props) {
   }
 
   if (label == "서류 점수(가정)" || label == "면접 점수(가정)") {
+    if (label == "서류 점수(가정)" && univRatio.secondDocRatio == 0) return <></>
     if (label == "면접 점수(가정)" && univRatio.interviewRatio == 0) return <></>
 
     const maxNum = (label == "서류 점수(가정)" ? univRatio.secondDocRatio : univRatio.interviewRatio)
