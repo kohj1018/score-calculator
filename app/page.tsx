@@ -61,7 +61,7 @@ export default function Home() {
            (by 올컴러)
           </p>
         </header>
-        <div className='w-full flex justify-end items-center space-x-2'>
+        <div className='mt-2 md:mt-5 w-full flex justify-end items-center space-x-2'>
           <div className='flex items-center space-x-1'>
             <RemoveRedEyeOutlined />
             <p className='text-sm'>{view}</p>
@@ -90,6 +90,13 @@ export default function Home() {
           각 학교 모집요강 기반 추정치입니다.
           참고용으로만 확인 바랍니다.
           추가 원하는 사항은 문의주시면 반영해보도록 하겠습니다.
+          <button
+            className='mt-4 w-full flex items-center justify-center space-x-1'
+            onClick={clickLike}
+          >
+            {isLiked ? <ThumbUp /> : <ThumbUpOutlined />}
+            <p className='text-lg'>{like}</p>
+          </button>
         </footer>
       </div>
     </>
