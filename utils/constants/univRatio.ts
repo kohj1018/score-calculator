@@ -89,10 +89,10 @@ export const 서울시립대자연계열2: UnivRatio = {
 export const 건국대: UnivRatio = {
   englishQuestionNum : 20,
   mathQuestionNum : 20,
-  firstEnglishRatio : 50,
-  firstMathRatio : 50,
-  secondEnglishRatio : 35,
-  secondMathRatio : 35,
+  firstEnglishRatio : 40,
+  firstMathRatio : 60,
+  secondEnglishRatio : 28,
+  secondMathRatio : 42,
   docRatio : 30,
   interviewRatio : 0
 }
