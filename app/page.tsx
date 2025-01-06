@@ -10,31 +10,12 @@ import {getLikeAndView} from "@/app/firebase/functions/getLikeAndView";
 import {addView} from "@/app/firebase/functions/addView";
 import {addLike} from "@/app/firebase/functions/addLike";
 import {deleteLike} from "@/app/firebase/functions/deleteLike";
-import {useRouter} from "next/router";
-
-const TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID
 
 export default function Home() {
   const [like, setLike] = useState(0)
   const [view, setView] = useState(0)
   const [isLiked, setIsLiked] = useState(false)
   let likeLoading = false
-  const router = useRouter()
-
-  useEffect(() => {
-    // if (process.env.ENV_STATE !== 'production') return  // production 상태가 아니면 통계 포함 X
-
-    if (!TRACKING_ID || router.isPreview) return
-
-    gtag("config", TRACKING_ID, {
-      send_page_view: false, // manually send page views to have full control
-    })
-
-    gtag("event", "page_view", {
-      page_path: window.location.pathname,
-      send_to: TRACKING_ID,
-    })
-  }, [])
 
   // 조회수와 좋아요 수를 불러옴
   useEffect(() => {
