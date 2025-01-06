@@ -3,10 +3,9 @@ export interface UnivRatio {
   mathQuestionNum: number,
   firstEnglishRatio: number
   firstMathRatio: number
-  firstDocRatio: number
   secondEnglishRatio: number
   secondMathRatio: number
-  secondDocRatio: number
+  docRatio: number
   interviewRatio: number
 }
 
@@ -15,34 +14,31 @@ export const 한양대: UnivRatio = {
   mathQuestionNum : 25,
   firstEnglishRatio : 40,
   firstMathRatio : 60,
-  firstDocRatio : 0,
   secondEnglishRatio : 20,
   secondMathRatio : 50,
-  secondDocRatio : 30,
+  docRatio : 30,
   interviewRatio : 0
 }
 
 export const 성균관대: UnivRatio = {
   englishQuestionNum : 25,
   mathQuestionNum : 20,
-  firstEnglishRatio : 37.5,
-  firstMathRatio : 37.5,
-  firstDocRatio : 25,
+  firstEnglishRatio : 30,
+  firstMathRatio : 30,
   secondEnglishRatio : 30,
   secondMathRatio : 30,
-  secondDocRatio : 20,
+  docRatio : 20,
   interviewRatio : 20
 }
 
 export const 서강대: UnivRatio = {
   englishQuestionNum : 30,
   mathQuestionNum : 20,
-  firstEnglishRatio : 44.44444,
-  firstMathRatio : 55.55555,
-  firstDocRatio : 0,
+  firstEnglishRatio : 40,
+  firstMathRatio : 50,
   secondEnglishRatio : 40,
   secondMathRatio : 50,
-  secondDocRatio : 10,
+  docRatio : 10,
   interviewRatio : 0
 }
 
@@ -51,10 +47,9 @@ export const 중앙대: UnivRatio = {
   mathQuestionNum : 30,
   firstEnglishRatio : 0,
   firstMathRatio : 100,
-  firstDocRatio : 0,
   secondEnglishRatio : 0,
   secondMathRatio : 60,
-  secondDocRatio : 40,
+  docRatio : 40,
   interviewRatio : 0
 }
 
@@ -63,10 +58,9 @@ export const 경희대: UnivRatio = {
   mathQuestionNum : 30,
   firstEnglishRatio : 0,
   firstMathRatio : 90,
-  firstDocRatio : 0,
   secondEnglishRatio : 0,
   secondMathRatio : 0,
-  secondDocRatio : 0,
+  docRatio : 0,
   interviewRatio : 0
 }
 
@@ -75,10 +69,9 @@ export const 서울시립대자연계열1: UnivRatio = {
   mathQuestionNum : 25,
   firstEnglishRatio : 0,
   firstMathRatio : 100,
-  firstDocRatio : 0,
   secondEnglishRatio : 0,
   secondMathRatio : 60,
-  secondDocRatio : 40,
+  docRatio : 40,
   interviewRatio : 0
 }
 
@@ -87,10 +80,9 @@ export const 서울시립대자연계열2: UnivRatio = {
   mathQuestionNum : 25,
   firstEnglishRatio : 50,
   firstMathRatio : 50,
-  firstDocRatio : 0,
   secondEnglishRatio : 30,
   secondMathRatio : 30,
-  secondDocRatio : 40,
+  docRatio : 40,
   interviewRatio : 0
 }
 
@@ -99,10 +91,9 @@ export const 건국대: UnivRatio = {
   mathQuestionNum : 20,
   firstEnglishRatio : 50,
   firstMathRatio : 50,
-  firstDocRatio : 0,
   secondEnglishRatio : 35,
   secondMathRatio : 35,
-  secondDocRatio : 30,
+  docRatio : 30,
   interviewRatio : 0
 }
 
@@ -111,10 +102,9 @@ export const 동국대: UnivRatio = {
   mathQuestionNum : 20,
   firstEnglishRatio : 40,
   firstMathRatio : 60,
-  firstDocRatio : 0,
   secondEnglishRatio : 28,
   secondMathRatio : 42,
-  secondDocRatio : 30,
+  docRatio : 30,
   interviewRatio : 0
 }
 
@@ -123,9 +113,8 @@ export const 홍익대: UnivRatio = {
   mathQuestionNum : 15,
   firstEnglishRatio : 50,
   firstMathRatio : 50,
-  firstDocRatio : 0,
   secondEnglishRatio : 37.5,
   secondMathRatio : 37.5,
-  secondDocRatio : 25,
+  docRatio : 25,
   interviewRatio : 0
 }

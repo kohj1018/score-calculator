@@ -33,10 +33,10 @@ export function ScoreInput({ label, univRatio, value, setValue }: Props) {
   }
 
   if (label == "서류 점수(가정)" || label == "면접 점수(가정)") {
-    if (label == "서류 점수(가정)" && univRatio.secondDocRatio == 0) return <></>
+    if (label == "서류 점수(가정)" && univRatio.docRatio == 0) return <></>
     if (label == "면접 점수(가정)" && univRatio.interviewRatio == 0) return <></>
 
-    const maxNum = (label == "서류 점수(가정)" ? univRatio.secondDocRatio : univRatio.interviewRatio)
+    const maxNum = (label == "서류 점수(가정)" ? univRatio.docRatio : univRatio.interviewRatio)
     return (
       <TextField
         id="outlined-number"

@@ -22,35 +22,35 @@ export function Calculator({ order, univ, univRatio, fullMarksNotice = "각각 1
 
   useEffect(() => {
     if (!!mathWrongAnswerNum
-      && (univRatio.firstEnglishRatio == 0 || !!englishWrongAnswerNum)
-      && (univRatio.secondDocRatio == 0 || (univRatio.secondDocRatio > 0 && !!docScore))
+      && (univRatio.firstEnglishRatio == 0 || (univRatio.firstEnglishRatio > 0 && !!englishWrongAnswerNum))
+      && (univRatio.docRatio == 0 || (univRatio.docRatio > 0 && !!docScore))
       && (univRatio.interviewRatio == 0 || (univRatio.interviewRatio > 0 && !!interviewScore))
     ) {
-      let firstEngConScore: number = (univRatio.firstEnglishRatio == 0 ? 0 : (univRatio.englishQuestionNum - parseInt(englishWrongAnswerNum)) / univRatio.englishQuestionNum * univRatio.firstEnglishRatio) // 영어 환산 점수
-      let firstMathConScore: number = (univRatio.mathQuestionNum - parseInt(mathWrongAnswerNum)) / univRatio.mathQuestionNum * univRatio.firstMathRatio // 수학 환산 점수
-      let firstDocScore: number = univRatio.firstDocRatio
+      let firstEngConScore: number = 0
+      let secondEngConScore: number = 0
 
-      console.log("firstEng", firstEngConScore)
-      if (univ == "성균관대") {
-        firstEngConScore = firstEngConScore * 80 / 100
-        firstMathConScore = firstMathConScore * 80 / 100
-        firstDocScore = parseInt(docScore) * univRatio.firstDocRatio / univRatio.secondDocRatio
+      if (univRatio.firstEnglishRatio != 0) {
+        firstEngConScore = (univRatio.englishQuestionNum - parseInt(englishWrongAnswerNum)) / univRatio.englishQuestionNum * univRatio.firstEnglishRatio // 1차 영어 환산 점수
       }
-      if (univ == "서강대") {
-        firstEngConScore = firstEngConScore * 90 / 100
-        firstMathConScore = firstMathConScore * 90 / 100
+
+      if (univRatio.secondEnglishRatio != 0) {
+        secondEngConScore = (univRatio.englishQuestionNum - parseInt(englishWrongAnswerNum)) / univRatio.englishQuestionNum * univRatio.secondEnglishRatio // 2차 영어 환산 점수
+      }
+
+      let firstDocScore: number = 0;
+      if (univ == "성균관대") {
+        firstDocScore = parseInt(docScore)
       }
 
       setFirstConversionScore((
         firstEngConScore
-        + firstMathConScore
+        + (univRatio.mathQuestionNum - parseInt(mathWrongAnswerNum)) / univRatio.mathQuestionNum * univRatio.firstMathRatio // 1차 수학 환산 점수
         + firstDocScore
       ).toFixed(2));
 
-      const secondEngConScore: number = (univRatio.secondEnglishRatio == 0 ? 0 : (univRatio.englishQuestionNum - parseInt(englishWrongAnswerNum)) / univRatio.englishQuestionNum * univRatio.secondEnglishRatio) // 영어 환산 점수
       setSecondConversionScore((
         secondEngConScore
-        + (univRatio.mathQuestionNum - parseInt(mathWrongAnswerNum)) / univRatio.mathQuestionNum * univRatio.secondMathRatio // 수학 환산 점수
+        + (univRatio.mathQuestionNum - parseInt(mathWrongAnswerNum)) / univRatio.mathQuestionNum * univRatio.secondMathRatio // 2차 수학 환산 점수
         + parseInt(0 + docScore)
         + parseInt(0 + interviewScore)
       ).toFixed(2))
